@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
-import { Example } from '../../components';
+import Container from 'react-bootstrap/Container'
+import Booklist from '../../components/Booklist'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Detailpage from '../../components/Detailpage';
 
 const RootContainer = () => {
   const [books, setBooks] = useState([])
@@ -18,14 +21,21 @@ const RootContainer = () => {
     return await res.json()
   }
 
+
   return (
-    <>
-      <h1>ti&m Library</h1>
-      <Example />
-      {books.map((book) => (
-        <p>{book.title}</p>
-      ))}
-    </>
+    <BrowserRouter>
+      <Container>
+        <h1>ti&m Library</h1>
+        <Switch>
+          <Route path="/book/:id">
+            <Detailpage/>
+          </Route>
+          <Route exact path="/">
+            <Booklist books={books}/>
+          </Route>
+        </Switch>
+      </Container>
+    </BrowserRouter>
   );
   
 }

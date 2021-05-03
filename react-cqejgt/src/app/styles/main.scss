@@ -3,6 +3,33 @@ html, body {
   padding: 0;
 }
 
-#app {
-  margin: 0 15px;
+.detailLabel{
+  color: grey;
+}
+
+.detailHeader{
+  margin-left: .5em;
+  font-size: 2em;
+  vertical-align: bottom;
+}
+
+.mainHeader{
+  font-size: 2em;
+}
+
+.booklistItem:hover{
+  text-decoration: none;
+}
+
+.headerButton{
+  vertical-align: top;
+  margin-top: .3em;
+}
+
+.detailContent{
+  padding: 1em;
+}
+
+.submitButton{
+  margin-top: 1em;
 }
